@@ -19,7 +19,7 @@ CREATE TABLE attendance (
     checkInTime TIME,
     checkOutTime TIME,
     status ENUM('Present', 'Absent', 'On Leave', 'Late') DEFAULT 'Present',
-    FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
+    FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
 );
 
 =======
@@ -31,7 +31,7 @@ CREATE TABLE Leave (
     enddate  DATE,
     Approval Status VARCHAR(50),
     reason VARCHAR(50),
-    FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
+    FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
 );
 CREATE TABLE employee_shifts (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,4 +40,10 @@ CREATE TABLE employee_shifts (
     effective_from DATE,
     FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
     FOREIGN KEY (shift_id) REFERENCES shifts(shift_id)
+);
+CREATE TABLE shifts (
+    shift_id INT AUTO_INCREMENT PRIMARY KEY,
+    shift_name VARCHAR(50),
+    start_time TIME,
+    end_time TIME
 );
