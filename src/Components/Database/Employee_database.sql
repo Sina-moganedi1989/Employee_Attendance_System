@@ -33,3 +33,11 @@ CREATE TABLE Leave (
     reason VARCHAR(50),
     FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
 );
+CREATE TABLE employee_shifts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT,
+    shift_id INT,
+    effective_from DATE,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+    FOREIGN KEY (shift_id) REFERENCES shifts(shift_id)
+);
