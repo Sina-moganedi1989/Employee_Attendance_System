@@ -10,3 +10,13 @@ CREATE TABLE employees (
     hire_date DATE,
     status ENUM('active', 'inactive') DEFAULT 'active'
 );
+
+CREATE TABLE attendance (
+    attendanceID INT AUTO_INCREMENT PRIMARY KEY,
+    employeeID INT,
+    date DATE,
+    checkInTime TIME,
+    checkOutTime TIME,
+    status ENUM('Present', 'Absent', 'On Leave', 'Late') DEFAULT 'Present',
+    FOREIGN KEY (employeeID) REFERENCES Employees(employeeID)
+);
