@@ -14,7 +14,7 @@ CREATE TABLE employees (
 <<<<<<< Updated upstream
 CREATE TABLE attendance (
     attendanceID INT AUTO_INCREMENT PRIMARY KEY,
-    employeeID INT,
+    employee_id INT,
     date DATE,
     checkInTime TIME,
     checkOutTime TIME,
@@ -25,8 +25,9 @@ CREATE TABLE attendance (
 =======
 >>>>>>> Stashed changes
 CREATE TABLE Leave (
-    type VARCHAR(50),
-    sartDate DATE,
+    leavetype VARCHAR(50),
+    employee_id INT,
+    startDate DATE,
     enddate  DATE,
     Approval Status VARCHAR(50),
     reason VARCHAR(50),
