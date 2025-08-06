@@ -11,7 +11,6 @@ CREATE TABLE employees (
     status ENUM('active', 'inactive') DEFAULT 'active'
 );
 
-<<<<<<< Updated upstream
 CREATE TABLE attendance (
     attendanceID INT AUTO_INCREMENT PRIMARY KEY,
     employee_id INT,
@@ -22,8 +21,6 @@ CREATE TABLE attendance (
     FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
 );
 
-=======
->>>>>>> Stashed changes
 CREATE TABLE Leave (
     leavetype VARCHAR(50),
     employee_id INT,
