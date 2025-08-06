@@ -21,7 +21,11 @@ CREATE TABLE attendance (
     FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
 );
 
+<<<<<<< HEAD
 CREATE TABLE Leave (
+=======
+CREATE TABLE leave (
+>>>>>>> refs/remotes/origin/main
     leavetype VARCHAR(50),
     employee_id INT,
     startDate DATE,
@@ -30,6 +34,7 @@ CREATE TABLE Leave (
     reason VARCHAR(50),
     FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
 );
+
 CREATE TABLE employee_shifts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     employee_id INT,
@@ -38,9 +43,25 @@ CREATE TABLE employee_shifts (
     FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
     FOREIGN KEY (shift_id) REFERENCES shifts(shift_id)
 );
+
 CREATE TABLE shifts (
     shift_id INT AUTO_INCREMENT PRIMARY KEY,
     shift_name VARCHAR(50),
     start_time TIME,
     end_time TIME
+);
+
+CREATE TABLE adminUsers (
+    adminID INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE,
+    passwordHash VARCHAR(255),
+    role ENUM('Admin', 'Manager')
+);
+
+
+CREATE TABLE holidays (
+    holidayID INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    date DATE,
+    description TEXT
 );
